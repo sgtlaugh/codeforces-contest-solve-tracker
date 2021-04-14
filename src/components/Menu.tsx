@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   AppBar,
   Button,
+  Grid,
   GridList,
   GridListTile,
   Link,
@@ -66,37 +67,39 @@ const Menu = (): JSX.Element => {
     <AppBar position="static" color="default">
       {/* <nav className="navbar navbar-expand-lg navbar-light bg-light p-2"> */}
       <Toolbar>
-        <ListItem component={RouterLink} to="/" color="primary">
-          BashForces
-        </ListItem>
+        <Grid item sm={12} xs={12}>
+          <ListItem component={RouterLink} to="/" color="primary">
+            BashForces
+          </ListItem>
 
-        {/* <ul className="navbar-nav ml-auto mt-2 mt-lg-0"> */}
-        <Button color="primary" onClick={() => sync()}>
-          <RefreshIcon />
-        </Button>
-        <ListItem button component={RouterLink} to={PROBLEMS}>
-          Problem List
-        </ListItem>
-        <ListItem button component={RouterLink} to={CONTESTS}>
-          Contest
-        </ListItem>
-        {/* </ul> */}
-        <form
-          className="form-inline d-flex my-2 my-lg-0"
-          onSubmit={(e) => {
-            e.preventDefault();
-            submitUser();
-          }}>
-          <input
-            name="handle"
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Handle"
-            aria-label="Search"
-            value={handle}
-            onChange={(e) => setHandle(e.target.value)}
-          />
-        </form>
+          {/* <ul className="navbar-nav ml-auto mt-2 mt-lg-0"> */}
+          <Button color="primary" onClick={() => sync()}>
+            <RefreshIcon />
+          </Button>
+          <ListItem button component={RouterLink} to={PROBLEMS}>
+            Problem List
+          </ListItem>
+          <ListItem button component={RouterLink} to={CONTESTS}>
+            Contest
+          </ListItem>
+          {/* </ul> */}
+          <form
+            className="form-inline d-flex my-2 my-lg-0"
+            onSubmit={(e) => {
+              e.preventDefault();
+              submitUser();
+            }}>
+            <input
+              name="handle"
+              className="form-control mr-sm-2"
+              type="search"
+              placeholder="Handle"
+              aria-label="Search"
+              value={handle}
+              onChange={(e) => setHandle(e.target.value)}
+            />
+          </form>
+        </Grid>
       </Toolbar>
     </AppBar>
   );
