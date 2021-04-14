@@ -8,10 +8,16 @@ import {
 } from "../../util/bashforces";
 import { ATTEMPTED_PROBLEMS, SOLVED_PROBLEMS } from "../../util/constants";
 
+interface con{
+
+};
+
 const ContestList = (props) => {
   const state = useSelector((state) => state);
 
   const related = state.sharedProblems.problems;
+
+  
 
   const getProblem = (contestId, index) => {
     let l = 0,
@@ -38,6 +44,7 @@ const ContestList = (props) => {
 
   const getStatus = (contestId, index, id, solveStatus) => {
     let res = state.userSubmissions[solveStatus].has(id);
+    
     if (!res) {
       let sharedIndex = getSharedIndex(contestId, index);
       if (sharedIndex != -1) {
@@ -46,7 +53,7 @@ const ContestList = (props) => {
         }
       }
     }
-    //if(contestId == 1495)
+
     return res;
   };
 

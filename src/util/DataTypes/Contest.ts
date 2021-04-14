@@ -1,6 +1,6 @@
 import Problem from "./Problem";
 
-export class Contest {
+export default class Contest {
   id: number;
   name: string;
   type?: string;
@@ -18,7 +18,7 @@ export class Contest {
   country?: string;
   city?: string;
   season?: string;
-  private problemList: Problem[];
+  private problemList: Problem[][];
 
   constructor(
     id: number,
